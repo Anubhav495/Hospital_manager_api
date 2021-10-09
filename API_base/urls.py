@@ -1,6 +1,6 @@
 from django.urls import path,include
 from patients.views import list_patients,patient_detail,add_patient
-from doctors.views import list_doctors,doctor_detail
+from doctors.views import add_doctor, list_doctors,doctor_detail
 from rooms.views import list_rooms,room_detail,add_room
 
 
@@ -12,5 +12,6 @@ urlpatterns = [
     path('room-list/',list_rooms,name='List_Rooms'),
     path('room-list/<int:pk>',room_detail,name='Room_Detail'),
     path('create-room',add_room,name='Create_Room'),
-    path('add-patient',add_patient,name='Add_Patient')
+    path('add-patient',add_patient,name='Add_Patient'),
+    path('add-doctor',add_doctor,name='Add_Doctor')
 ]

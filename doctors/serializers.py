@@ -6,4 +6,12 @@ class Doctor_serializer(serializers.ModelSerializer):
         model = Doctor
         fields = ['id','name','contact']
 
+class Add_Doctor_serializer(serializers.Serializer):
+    name = serializers.CharField()
+    contact = serializers.CharField()
+
+    def create(self,validated_data):
+        return Doctor.objects.create(**validated_data)
+
+
 
