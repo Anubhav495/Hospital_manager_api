@@ -1,1 +1,4 @@
-web: gunicorn site1.wsgi
+release: python manage.py makemigrations --no-input
+release: python manage.py migrate --no-input
+
+web: gunicorn hospital-api-base.wsgi
